@@ -1,0 +1,9 @@
+name = "backend"
+compatibility_date = "2023-12-01"
+
+[vars]
+DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiZTljZmI4ZDEtMzlmYi00OTk5LWJlNjktYzJlNmE1ZjRmM2FjIiwidGVuYW50X2lkIjoiMDAwNjgxZDk5MjMxNjczMDAzMTY2MTExMDdiODczZmQzNDUyZDZlMmQxMWViOTIwY2JlYWE4ODU2YjRlYmZmNyIsImludGVybmFsX3NlY3JldCI6ImFhMmZiNzNhLTRmZGQtNDcyMi05MDNjLTI1ZWM2NDJhNzUxOCJ9.r0HVV042c8OV8b2Oz71BL6k36ObxBf3GFfwW6WpNrf4"
+
+JWT_SECRET="SECRET"
+# this database url is connection pool url which connects with workers
+
