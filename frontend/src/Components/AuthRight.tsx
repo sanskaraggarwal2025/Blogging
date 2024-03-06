@@ -1,6 +1,6 @@
 import React from "react";
 
-const SignupLeft = () => {
+const AuthRight = () => {
   return (
     <div className="bg-slate-200 h-screen flex justify-center  flex-col ">
       <div className="flex justify-center">
@@ -17,4 +17,4 @@ const SignupLeft = () => {
   );
 };
 
-export default SignupLeft;
+export default AuthRight;
