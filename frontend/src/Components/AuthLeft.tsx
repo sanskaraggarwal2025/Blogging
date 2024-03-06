@@ -8,15 +8,14 @@ const AuthLeft = ({ type }: { type: "signup" | "signin" }) => {
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
   const onSubmit = async (data:SignupInput) => {
-    console.log(data);
-    
     try {
       let res = await axios.post(`${BACKEND_URL}/api/v1/user/${type === 'signup' ? 'signup':'signin'}`,{
         name:data.name,
-        username:data.username,
-        passoword:data.passoword,
+        email:data.email,
+        password:data.password,
       });
-      let token = res.data;
+      let token = res.data.jwt;
+      console.log(token);
       localStorage.setItem("token",token);
       navigate('/blogs');
     } catch (err) {
@@ -56,12 +55,12 @@ const AuthLeft = ({ type }: { type: "signup" | "signin" }) => {
                 </div>
               ) : null}
               <div className="mt-5">
-                <label className="font-medium">Username</label>
+                <label className="font-medium">Email</label>
                 <br />
                 <input
-                  {...register("username")}
+                  {...register("email")}
                   type="text"
-                  placeholder="Enter your Username"
+                  placeholder="Enter your Email"
                   className="border border-slate-500 p-3 mt-3 rounded-md placeholder:text-slate-600 w-full"
                 />
               </div>
@@ -69,7 +68,7 @@ const AuthLeft = ({ type }: { type: "signup" | "signin" }) => {
                 <label className="font-medium">Password</label>
                 <br />
                 <input
-                  {...register("passoword")}
+                  {...register("password")}
                   type="text"
                   placeholder="Enter your Password"
                   className="border border-slate-500 p-3 mt-3 rounded-md placeholder:text-slate-600 w-full"
