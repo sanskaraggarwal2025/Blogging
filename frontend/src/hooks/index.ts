@@ -16,16 +16,20 @@ export const useBlog = ({id}:{id:string}) => {
     const [blog, setBlog] = useState<Blog>();
 
     useEffect(() => {
+        console.log('mai chal');
         const fetchBlog = async() => {
             let res = await axios.get(`${BACKEND_URL}/api/v1/blog/${id}`,{
                 headers:{
                     Authorization:`Bearer ` + localStorage.getItem('token')
                 }
             })
+            console.log(res.data);            
             setBlog(res.data.post);
+            console.log(res.data.post);
+            
             setloading(false);
         }
-        fetchBlog 
+        fetchBlog();
     },[id])
 
 
@@ -52,7 +56,6 @@ export const useBlogs = () => {
         fetchBlogs();
 
     }, []);
-    console.log(blogs);
     
     return {
         loading,
