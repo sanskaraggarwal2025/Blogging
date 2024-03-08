@@ -10,22 +10,22 @@ const Publish = () => {
   const onSubmit = async (data: CreateBlogInput) => {
     console.log(data);
     console.log(localStorage.getItem("token"));
-
+    const token = localStorage.getItem("token");
     try {
       const res = await axios.post(
-        `${BACKEND_URL}/api/v1/blog`,
+        `${BACKEND_URL}/api/v1/blog/`,
         {
           title: data.title,
           content: data.content,
         },
         {
           headers: {
-            Authorization: `Bearer ` + localStorage.getItem('token'),
+            Authorization: `Bearer ${token}`,
           },
         }
       );
-      console.log(res);
-      navigate(`/blog/${res.data.id}`);
+      console.log(res.data.post);
+      navigate(`/blog/${res.data.post}`);
     } catch (err) {
       console.log(err);
     }
