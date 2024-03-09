@@ -1,4 +1,3 @@
-import React from "react";
 import Appbar from "../Components/Appbar";
 import { useBlog } from "../hooks";
 import { useParams } from "react-router-dom";
@@ -10,7 +9,7 @@ const Blog = () => {
     id: id || "",
   });
 
-  if (loading) {
+  if (loading || !blog) {
     return (
       <>
         <Appbar />

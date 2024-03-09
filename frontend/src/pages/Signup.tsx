@@ -1,4 +1,3 @@
-import React from "react";
 import AuthRight from "../Components/AuthRight";
 import AuthLeft from "../Components/AuthLeft";
 const Signup = () => {

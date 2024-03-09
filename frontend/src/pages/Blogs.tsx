@@ -1,4 +1,3 @@
-import React from "react";
 import BlogCard from "../Components/BlogCard";
 import Appbar from "../Components/Appbar";
 import { useBlogs } from "../hooks";

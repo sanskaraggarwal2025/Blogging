@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const Publish = () => {
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
-  const onSubmit = async (data: CreateBlogInput) => {
+  const onSubmit:any = async (data: CreateBlogInput) => {
     console.log(data);
     console.log(localStorage.getItem("token"));
     const token = localStorage.getItem("token");

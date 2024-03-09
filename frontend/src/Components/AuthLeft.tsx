@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { SignupInput } from "@sanskar2025/common";
@@ -7,7 +6,7 @@ import { BACKEND_URL } from "../Config";
 const AuthLeft = ({ type }: { type: "signup" | "signin" }) => {
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
-  const onSubmit = async (data:SignupInput) => {
+  const onSubmit:any = async (data:SignupInput) => {
     try {
       let res = await axios.post(`${BACKEND_URL}/api/v1/user/${type === 'signup' ? 'signup':'signin'}`,{
         name:data.name,
