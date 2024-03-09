@@ -1,24 +1,32 @@
-import React from 'react'
-import Appbar from '../Components/Appbar'
-import { useBlog } from '../hooks'
-import { useParams } from 'react-router-dom'
-import FullBlog from '../Components/FullBlog'
+import React from "react";
+import Appbar from "../Components/Appbar";
+import { useBlog } from "../hooks";
+import { useParams } from "react-router-dom";
+import Spinner from "../Components/Spinner";
+import FullBlog from "../Components/FullBlog";
 const Blog = () => {
-  const {id} = useParams();
-  const {loading,blog} = useBlog({
-    id:id || ""
+  const { id } = useParams();
+  const { loading, blog } = useBlog({
+    id: id || "",
   });
 
-  if(loading){
-    return <div>
-      loading...
-    </div>
-  }         
+  if (loading) {
+    return (
+      <>
+        <Appbar />
+        <div className="h-screen flex flex-col justify-center">
+          <div className="flex justify-center">
+            <Spinner />
+          </div>
+        </div>
+      </>
+    );
+  }
   return (
     <div>
-      <FullBlog blog={blog}/>
+      <FullBlog blog={blog} />
     </div>
-  )
-}
+  );
+};
 
-export default Blog
+export default Blog;
