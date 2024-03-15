@@ -74,3 +74,15 @@ userRouter.post('/signin', async (c) => {
         jwt: token
     })
 })
+userRouter.delete('/:id', async(c) => {
+    const prisma = new PrismaClient({
+        datasourceUrl: c.env.DATABASE_URL,
+    }).$extends(withAccelerate());
+    const id = c.req.param('id');
+    const user = await prisma.user.delete({
+        where:{
+            id:id
+        }
+    })
+    return c.json({ post: user });
+})
