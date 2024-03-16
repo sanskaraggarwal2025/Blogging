@@ -21,21 +21,21 @@ const BlogCard = ({
           <div className="flex">
             {/* yha avatar ayega */}
             <AvatarComp name={authorName} />
-            <div className="font-extralight pl-2 text-sm flex flex-col justify-center">
+            <div className="font-extralight pl-2 text-sm flex flex-col justify-center text-white">
               {authorName}
             </div>
             <div className="pl-2 flex flex-col justify-center">
               <Circle />
             </div>
-            <div className="font-thin text-sm text-slate-500 flex flex-col justify-center pl-2">
+            <div className="font-thin text-sm text-white flex flex-col justify-center pl-2">
               {publishedDate}
             </div>
           </div>
-          <div className="text-xl font-semibold pt-2">{title}</div>
-          <div className="text-md font-thin">
+          <div className="text-xl font-semibold pt-2 text-white">{title}</div>
+          <div className="text-md font-thin text-white">
             {content.slice(0, 100) + "..."}
           </div>
-          <div className="text-slate-500 text-sm font-thin pt-4">
+          <div className="text-white text-sm font-thin pt-4">
             {`${Math.ceil(content.length / 100)} minute(s) read`}
           </div>
         </div>
@@ -57,14 +57,14 @@ export function AvatarComp({
 }) {
   return (
     <div
-      className={`relative inline-flex items-center justify-center overflow-hidden bg-gray-600 rounded-full ${
+      className={`relative inline-flex items-center justify-center overflow-hidden bg-button-color rounded-full ${
         size === "small" ? "w-6 h-6" : "w-10 h-10"
       }`}
     >
       <span
         className={`${
           size === "small" ? "text-xs" : "text-md"
-        } font-extralight text-gray-600 dark:text-gray-300`}
+        } font-extralight text-black-color bg-button-color dark:text-black-color`}
       >
         {name[0]}
       </span>

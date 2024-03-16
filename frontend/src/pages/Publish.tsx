@@ -4,12 +4,9 @@ import { CreateBlogInput } from "@sanskar2025/common";
 import axios from "axios";
 import { BACKEND_URL } from "../Config";
 import { useNavigate } from "react-router-dom";
-import JoditEditor from "jodit-react";
 const Publish = () => {
   const navigate = useNavigate();
-  // const { register, handleSubmit } = useForm();
-  const { register, handleSubmit, setValue, watch } = useForm();
-  const { content } = watch(); // Watching the 'content' field
+  const { register, handleSubmit } = useForm();
   const onSubmit:any = async (data: CreateBlogInput) => {
     console.log(data);
     console.log(localStorage.getItem("token"));
@@ -38,18 +35,18 @@ const Publish = () => {
       <div>
         <Appbar />
         <div className="flex justify-center">
-          <div className="max-w-screen-lg w-full">
+          <div className="max-w-screen-lg w-full ">
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
                 {...register("title")}
                 type="text"
-                className="focus:outline-none w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5"
+                className="focus:outline-none w-full bg-black-color border border-button-color text-button-color text-sm rounded-lg block  p-2.5 mt-8"
                 placeholder="Title"
               />
-              <TextEditor register={register} content = {content} setValue={setValue} />
+              <TextEditor register={register} />
               <button
                 type="submit"
-                className="mt-4 inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800"
+                className="mt-4 inline-flex items-center px-5 py-2.5 text-sm font-medium text-center  text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800"
               >
                 Publish post
               </button>
@@ -60,28 +57,21 @@ const Publish = () => {
     </>
   );
 };
-function TextEditor({ register,content,setValue }: { register: any ; content:any;setValue:any}) {
-  // const editorRef = useRef(null);
-
+function TextEditor({ register }: { register: any }) {
   return (
     <div className="mt-2">
       <div className="w-full mb-4 ">
-        <div className="flex items-center justify-between border">
+        <div className="flex items-center justify-between ">
           <div className="my-2 bg-white rounded-b-lg w-full">
-            <label className="sr-only">Publish post</label>
-            {/* <textarea
+            {/* <label className="sr-only text-button-color bg-white">Publish post</label> */}
+            <textarea
               {...register("content")}
               id="editor"
               rows={8}
-              className="focus:outline-none block w-full px-0 text-sm text-gray-800 bg-white border-0 pl-2"
+              className="focus:outline-none block w-full px-0 text-xl bg-black-color border border-button-color text-button-color  pl-4 pt-4"
               placeholder="Write an article..."
               required
-            /> */}
-            <JoditEditor
-              ref = {register('content')}
-              value = {content}
-              onChange={(value) => setValue('content', value)}
-             />
+            />
           </div>
         </div>
       </div>
