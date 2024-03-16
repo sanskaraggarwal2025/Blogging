@@ -3,6 +3,7 @@ import { PrismaClient } from "@prisma/client/edge";
 import { withAccelerate } from "@prisma/extension-accelerate";
 import { verify } from "hono/jwt";
 import { createBlogInput,upadateBlogInput } from "@sanskar2025/common";
+import { format } from "date-fns";
 export const blogRouter = new Hono<{
     Bindings: {
         DATABASE_URL: string,
@@ -50,11 +51,14 @@ blogRouter.post('/', async (c) => {
         datasourceUrl: c.env.DATABASE_URL,
     }).$extends(withAccelerate());
 
+    const currentDate = new Date();
+    const formattedDate = format(currentDate, 'd MMMM yyyy');
 
     const post = await prisma.post.create({
         data: {
             title: body.title,
             content: body.content,
+            createdAt:formattedDate,
             authorId: userId
         }
     })
@@ -103,6 +107,7 @@ blogRouter.get('/bulk', async (c) => {
             content:true,
             title:true,
             id:true,
+            createdAt:true,
             author:{
                 select:{
                     name:true,
@@ -130,6 +135,7 @@ blogRouter.get('/:id', async (c) => {
             id:true,
             title:true,
             content:true,
+            createdAt:true,
             author:{
                 select:{
                     name:true
