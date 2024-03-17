@@ -1,0 +1,5 @@
+/* Custom CSS for TinyMCE editor */
+.mce-container .mce-btn-group  .mce-btn {
+    background-color: #ffffff !important; /* Set button background color to white */
+    color: #000000 !important; /* Set button text color to black */
+}
