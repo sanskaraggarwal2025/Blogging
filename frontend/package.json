@@ -10,17 +10,24 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@editorjs/editorjs": "^2.29.0",
+    "@editorjs/header": "^2.8.1",
+    "@editorjs/list": "^1.9.0",
     "@sanskar2025/common": "^1.0.5",
+    "@tinymce/tinymce-react": "^4.3.2",
     "axios": "^1.6.7",
-    "jodit-react": "^4.0.15",
+    "draft-js": "^0.11.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-draft-wysiwyg": "^1.15.0",
     "react-hook-form": "^7.51.0",
     "react-router-dom": "^6.22.2"
   },
   "devDependencies": {
+    "@types/draft-js": "^0.11.18",
     "@types/react": "^18.2.56",
     "@types/react-dom": "^18.2.19",
+    "@types/react-draft-wysiwyg": "^1.13.8",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "@typescript-eslint/parser": "^7.0.2",
     "@vitejs/plugin-react": "^4.2.1",

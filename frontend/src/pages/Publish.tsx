@@ -4,10 +4,12 @@ import { CreateBlogInput } from "@sanskar2025/common";
 import axios from "axios";
 import { BACKEND_URL } from "../Config";
 import { useNavigate } from "react-router-dom";
+
 const Publish = () => {
+  
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
-  const onSubmit:any = async (data: CreateBlogInput) => {
+  const onSubmit: any = async (data: CreateBlogInput) => {
     console.log(data);
     console.log(localStorage.getItem("token"));
     const token = localStorage.getItem("token");
@@ -30,6 +32,7 @@ const Publish = () => {
       console.log(err);
     }
   };
+
   return (
     <>
       <div>
@@ -43,7 +46,10 @@ const Publish = () => {
                 className="focus:outline-none w-full bg-black-color border border-button-color text-button-color text-sm rounded-lg block  p-2.5 mt-8"
                 placeholder="Title"
               />
-              <TextEditor register={register} />
+              {/* <TextEditor register={register} /> */}
+            
+
+              {/* end text-editor */}
               <button
                 type="submit"
                 className="mt-4 inline-flex items-center px-5 py-2.5 text-sm font-medium text-center  text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800"
