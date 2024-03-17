@@ -9,7 +9,7 @@ const FullBlog = ({ blog }: { blog: Blog }) => {
         <div className="grid grid-cols-12 px-10 w-full pt-200 max-w-screen-xl pt-12">
           <div className="col-span-8">
             <div className="text-5xl font-extrabold text-button-color">{blog.title}</div>
-            <div className="text-button-color pt-2">Post in 2nd December 2023{blog.createdAt}</div>
+            <div className="text-button-color pt-2">Post on {blog.createdAt}</div>
             <div className="pt-4 text-button-color">{blog.content}</div>
           </div>
           <div className="col-span-4">
