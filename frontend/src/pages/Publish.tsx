@@ -49,7 +49,7 @@ const Publish = () => {
               {/* <TextEditor register={register} /> */}
               <div className="mt-8 ">
                   <Editor
-                    apiKey={API_KEY}
+                    apiKey='o681bcmr2sop7xlkd7vvnfyoc6gfde0tk3xb7vjui2djfw90'
                     init={{
                       height:450,
                       plugins:
