@@ -61,7 +61,7 @@ const Publish = () => {
                         { value: "First.Name", title: "First Name" },
                         { value: "Email", title: "Email" },
                       ],
-                      ai_request: (request, respondWith) =>
+                      ai_request: (respondWith:any) =>
                         respondWith.string(() =>
                           Promise.reject("See docs to implement AI Assistant")
                         ),
@@ -85,25 +85,5 @@ const Publish = () => {
     </>
   );
 };
-function TextEditor({ register }: { register: any }) {
-  return (
-    <div className="mt-2">
-      <div className="w-full mb-4 ">
-        <div className="flex items-center justify-between ">
-          <div className="my-2 bg-white rounded-b-lg w-full">
-            {/* <label className="sr-only text-button-color bg-white">Publish post</label> */}
-            <textarea
-              {...register("content")}
-              id="editor"
-              rows={8}
-              className="focus:outline-none block w-full px-0 text-xl bg-black-color border border-button-color text-button-color  pl-4 pt-4"
-              placeholder="Write an article..."
-              required
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+
 export default Publish;
