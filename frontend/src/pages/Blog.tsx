@@ -13,7 +13,7 @@ const Blog = () => {
     return (
       <>
         <Appbar />
-        <div className="h-screen flex flex-col justify-center">
+        <div className="h-screen flex flex-col justify-center ">
           <div className="flex justify-center">
             <Spinner />
           </div>

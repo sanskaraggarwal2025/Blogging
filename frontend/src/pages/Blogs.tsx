@@ -9,7 +9,7 @@ const Blogs = () => {
     return (
       <>
         <Appbar />
-        <div className="flex justify-center">
+        <div className="flex justify-center ">
           <div>
             <Skeleton />
             <Skeleton />
