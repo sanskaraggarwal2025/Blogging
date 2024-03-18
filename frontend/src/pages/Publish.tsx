@@ -5,7 +5,6 @@ import axios from "axios";
 import { BACKEND_URL } from "../Config";
 import { useNavigate } from "react-router-dom";
 import { Editor } from "@tinymce/tinymce-react";
-import { API_KEY } from "../Config";
 const Publish = () => {
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
