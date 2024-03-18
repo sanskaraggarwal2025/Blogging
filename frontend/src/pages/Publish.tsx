@@ -5,6 +5,7 @@ import axios from "axios";
 import { BACKEND_URL } from "../Config";
 import { useNavigate } from "react-router-dom";
 import { Editor } from "@tinymce/tinymce-react";
+import { API_KEY } from "../Config";
 const Publish = () => {
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
@@ -48,7 +49,7 @@ const Publish = () => {
               {/* <TextEditor register={register} /> */}
               <div className="mt-8 ">
                   <Editor
-                    apiKey="o681bcmr2sop7xlkd7vvnfyoc6gfde0tk3xb7vjui2djfw90"
+                    apiKey={API_KEY}
                     init={{
                       height:450,
                       plugins:
